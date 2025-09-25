@@ -1,0 +1,5 @@
+Ahmed|ahmed@gmail.com|pass123|CS
+Mona|mona@gmail.com|12345|Logic
+haroun|haroun@gmail.com|1012006|Programming
+mohamed|mohamed@gmail.com|223152|DataStructure
+Mahanna|mahanna@gmail.com|192837|Math

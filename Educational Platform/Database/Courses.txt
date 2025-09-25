@@ -1,0 +1,5 @@
+CS|ahmed|ahmed@gmail.com|24140250.24140152.24140089.24140333.24140444.|Assignment1
+Math|Mahanna|mahanna@gmail.com|24140250.24140152.24140089.24140065.24140656.24140234.|Assignment1.Assignment2.Assignment3.Assignment4
+Logic|mona|mona@gmail.com|24140132.24140256.24140065.24140444.24140656.|Assignment1.Assignment2
+Programming|haroun|haroun@gmail.com|24140132.24140089.24140065.24140333.|Assignment1.Assignment2
+DataStructure|mohamed|mohamed@gmail.com|24140250.24140132.24140065.24140234.|Assignment1.Assignment2
