@@ -4,9 +4,5 @@ Saeed Ashraf Haroun|24140256|saeed@gmail.com|1012006|CS Math Logic Programming
 Mostafa Mahanna|24140186|mostafa@gmail.com|2022025|CS Math Logic Programming DataStructure
 Mohamed Hisham Zaid|24140059|mohamed@gmail.com|4654512|CS
 Salma Mohamed|24140132|salma@gmail.com|sss125|Logic Programming DataStructure
-Omnia Gamal|24140065|omnia@gmail.com|1354646|Math Logic Programming DataStructure
 Mohamed Adel|24140169|adel@gmail.com|696969|CS Programming
-Hambo Galambo|24140333|hambo@gmail.com|pora19|CS Programming 
-Moda Cara|24140444|moda@gmail.com|pora444|CS Logic 
-Hamo Helal|24140656|hamoh@gmail.com|hola123|Logic Math
-Omra Fory|24140234|omra@gmail.com|oo1122|DataStructure Math 
+
