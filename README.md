@@ -30,7 +30,7 @@ the credentials validation process speed
 
 ---
 
-## 🚀 Build & Run
+##  Build & Run
 
 Clone the repository:
 ```bash
