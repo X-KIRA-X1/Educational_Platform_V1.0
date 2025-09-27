@@ -13,12 +13,13 @@ management system.
 ---
 
 ##  Features
-- Create and manage courses
+- Manage courses
 - Register students and enroll them in courses
 - Manage assignments and store results
 - Implemented optimizations using Red-Black tree and hash tables, improving
 the credentials validation process speed
 - Handling user input by using a well structured input validation function and regex
+- Using the object-oriented programming (OOP) principals like encapsulation and abstraction 
 
 ---
 
