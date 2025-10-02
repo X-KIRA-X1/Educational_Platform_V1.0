@@ -18,19 +18,13 @@ private :
 
 public :
     Student (){}
-    Student (string Name , string Id , string Mail , string Password , vector <string> Courses)
-    {
-        this -> Name = Name;
-        this -> Id = Id;
-        this -> Mail = Mail;
-        this -> Password = Password;
-        this -> Courses = Courses;
-    }
-    string GetMail() {return Mail;}
-    string GetName() {return Name;}
-    string GetPassword() {return Password;}
-    string GetId() {return Id;}
-    void Print()
+    Student (const string &Name , const string &Id , const string &Mail , const string &Password , const vector <string> &Courses)
+    : Name(Name) , Id(Id) , Mail(Mail) , Password(Password) , Courses(Courses){}
+    const string &GetMail() {return Mail;}
+    const string &GetName() {return Name;}
+    const string &GetPassword() {return Password;}
+    const string &GetId() {return Id;}
+    void Print() const
     {
         cout << Name << " " << Id << " " << Mail << " "  << Password << " " ;
         for (auto i : Courses) cout << i << " ";
@@ -41,7 +35,7 @@ public :
     void Actions(string ChosenCourse , vector <Course> &AllCourse , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
     void Study(string ChosenCourse , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
     void ShowAssignments(string ChosenCourse , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
-    void SubmitAssignment(string ChoisenCourse , string ChoicenAssignment , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
+    void SubmitAssignment(string ChosenCourse , string ChosenAssignment , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
 };
 
 #endif
