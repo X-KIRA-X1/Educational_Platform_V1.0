@@ -22,14 +22,12 @@ private:
     map <string , vector <string>> Lectures;
 public:
     void LoadData();
-    void UploadData();
     void Startup();
     void DoctorLogin(vector <AssignmentAnswer> AssignmentsAnswers);
     void StudentSignup();
     void StudentLogin();
     void Login();
     void SignUp();
-    void Exit();
     void Debug();
 };
 
