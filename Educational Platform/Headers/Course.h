@@ -1,27 +1,28 @@
-#ifndef EDUCATIONAL_PLATFORM_ASSIGNMENTS_H
-#define EDUCATIONAL_PLATFORM_ASSIGNMENTS_H
+#ifndef EDUCATIONAL_PLATFORM_COURSES_H
+#define EDUCATIONAL_PLATFORM_COURSES_H
 #include <iostream>
+#include <vector>
 #include <string>
 using namespace std;
-class AssignmentAnswer
+class Course
 {
-private :
+private:
     string Title;
-    string Course;
-    string StudentId;
-    string Answer;
-public :
-    AssignmentAnswer (const string &Title , const string &Course ,const string &StudentId ,const string &Answer)
-    : Title(Title), Course(Course), StudentId(StudentId), Answer(Answer) {}
-
+    string DoctorName;
+    string DoctorMail;
+    vector <string> StudentId;
+    vector <string> Assignments;
+public:
+    Course (const string &Title , const string &DoctorName , const string &DoctorMail , const vector<string> &StudentId , const vector <string> &Assignments)
+    : Title(Title ) , DoctorName(DoctorName) , DoctorMail(DoctorMail) , StudentId (StudentId)  , Assignments(Assignments){}
     void Print () const
     {
-        cout << Title << " " << Course << " "  << StudentId << " "  << Answer << " "  << "\n";
+        cout << Title << " " << DoctorName << " " << DoctorMail << " ";
+        for (auto id : StudentId ) cout << id << " ";
+        for (auto Assignment : Assignments ) cout << Assignment << " ";
+        cout << "\n";
     }
-    const string &GetCourse() {return Course;}
-    const string &GetId() {return StudentId;}
-    const string &GetAnswer() {return Answer;}
-    const string &GetTitle () {return Title;}
-    bool operator < (const AssignmentAnswer &Answer1) const {return this -> Title < Answer1.Title;}
+    const string &GetName() {return Title;}
+    const vector <string> &GetAssignments () {return Assignments;}
 };
 #endif
