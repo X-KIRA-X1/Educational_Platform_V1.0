@@ -3,7 +3,6 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include <limits>
 #include <regex>
 #include "System.h"
 int InputValidation (int Range);
@@ -36,11 +35,15 @@ string ValidId()
 }
 void System :: LoadData()
 {
-    ifstream StudentsFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Students.txt");
-    ifstream DoctorsFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Doctors.txt");
-    ifstream CoursesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Courses.txt");
-    ifstream AssignmentsFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\AssignmentsAnswers.txt");
-    ifstream LecturesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Lectures.txt");
+    ifstream StudentsFile("../Database/Students.txt");
+    ifstream DoctorsFile("../Database/Doctors.txt");
+    ifstream CoursesFile("../Database/Courses.txt");
+    ifstream AssignmentsFile("../Database/AssignmentsAnswers.txt");
+    ifstream LecturesFile("../Database/Lectures.txt");
+    if (!StudentsFile.is_open() || !DoctorsFile.is_open() || !CoursesFile.is_open() || !AssignmentsFile.is_open() || !LecturesFile.is_open()) {
+        cerr << "Error opening one or more of the files\n";
+        return ;
+    }
     string StudentLine;
     while (getline(StudentsFile , StudentLine))
     {
@@ -177,7 +180,7 @@ void System :: SignUp()
     if (Choice == 2)  StudentSignup();
 }
 
-void System::StudentSignup()
+void System :: StudentSignup()
 {
     cout << "Enter your name : \n";
     cin.ignore();
@@ -204,14 +207,14 @@ void System::StudentSignup()
         int Course ; cin >> Course ;
         ChosenCourses.push_back(Coursess[Course-1]);
     }
-    ofstream StudentFile ("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Students.txt" , ios :: app);
+    ofstream StudentFile ("../Database/Students.txt" , ios :: app);
     StudentFile << Name << '|' << Id << '|' << Mail << '|' << Password << '|';
     for (string Course : ChosenCourses) StudentFile << Course << " ";
     StudentFile << "\n";
     StudentFile.close();
     cout << "Account created successfully! Try to login again\n";
     set <string> ChosenCoursesSet (ChosenCourses.begin() , ChosenCourses.end());
-    ifstream ICoursesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Courses.txt");
+    ifstream ICoursesFile("Courses.txt");
     vector <string> lines;
     string line;
     while (getline(ICoursesFile , line)) lines.push_back(line);
@@ -226,8 +229,8 @@ void System::StudentSignup()
             lines[i].insert(Pointer , Id + '.');
         }
     }
-    ofstream OCoursesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Courses.txt");
-    for (string line : lines) OCoursesFile << line << '\n';\
+    ofstream OCoursesFile("Courses.txt");
+    for (const string &Oneline : lines) OCoursesFile << Oneline << '\n';
     OCoursesFile.close();
 }
 void System :: Login()
