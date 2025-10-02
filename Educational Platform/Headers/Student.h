@@ -32,10 +32,10 @@ public :
     }
     void StudentPortal(vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
 
-    void Actions(string ChosenCourse , vector <Course> &AllCourse , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
-    void Study(string ChosenCourse , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
-    void ShowAssignments(string ChosenCourse , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
-    void SubmitAssignment(string ChosenCourse , string ChosenAssignment , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
+    void Actions(const string &ChosenCourse , vector <Course> &AllCourse , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
+    void Study(const string &ChosenCourse , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
+    void ShowAssignments(const string &ChosenCourse , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
+    void SubmitAssignment(const string &ChosenCourse , const string &ChosenAssignment , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved);
 };
 
 #endif
