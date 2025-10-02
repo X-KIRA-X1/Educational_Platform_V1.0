@@ -1,6 +1,6 @@
 # Educational Platform V1.0
 
-A simple C++–based educational platform to manage courses, students and exams.
+A simple C++–based educational platform to manage courses, students and assignments.
 
 ---
 
