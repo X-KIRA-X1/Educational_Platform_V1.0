@@ -29,7 +29,7 @@ void Student :: StudentPortal (vector <Course> &AllCourses , map <string,vector<
     string ChosenCourse = Courses[Choice - 1];
     Actions(ChosenCourse , AllCourses , Links , Solved);
 }
-void Student :: Study(string ChosenCourse, vector <Course> &AllCourses , map <string , vector<string>> &Links , map <string , set <string>> &Solved)
+void Student :: Study(const string &ChosenCourse, vector <Course> &AllCourses , map <string , vector<string>> &Links , map <string , set <string>> &Solved)
 {
     if (!Links[ChosenCourse].size()) cout << "There is no lectures to study! \n";
     else
@@ -44,7 +44,7 @@ void Student :: Study(string ChosenCourse, vector <Course> &AllCourses , map <st
     if (Action == 1) Actions(ChosenCourse , AllCourses , Links , Solved);
     if (Action == 2) return;
 }
-void Student :: Actions(string ChosenCourse, vector<Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved)
+void Student :: Actions(const string &ChosenCourse, vector<Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved)
 {
     cout << "Select something to do : \n" << "1.Study\n2.Show Assignments\n3.Exit\n";
     int Action = InputValidation(3);
@@ -52,7 +52,7 @@ void Student :: Actions(string ChosenCourse, vector<Course> &AllCourses , map <s
     if (Action == 2) ShowAssignments(ChosenCourse , AllCourses , Links , Solved);
     if (Action == 3) return;
 }
-void Student :: ShowAssignments(string ChosenCourse, vector <Course> &AllCourses , map <string,vector<string>> &Links ,map <string , set <string>> &Solved)
+void Student :: ShowAssignments(const string &ChosenCourse, vector <Course> &AllCourses , map <string,vector<string>> &Links ,map <string , set <string>> &Solved)
 {
     vector <string> Assignments;
     for (auto Course : AllCourses)
@@ -101,7 +101,7 @@ void Student :: ShowAssignments(string ChosenCourse, vector <Course> &AllCourses
     if (Action == 2) Actions(ChosenCourse , AllCourses , Links , Solved);
     if (Action == 3) return;
 }
-void Student :: SubmitAssignment (string ChosenCourse , string ChosenAssignment , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved)
+void Student :: SubmitAssignment (const string &ChosenCourse , const string &ChosenAssignment , vector <Course> &AllCourses , map <string,vector<string>> &Links , map <string , set <string>> &Solved)
 {
     string Answer;
     cout << "Enter The Answer : \n";
