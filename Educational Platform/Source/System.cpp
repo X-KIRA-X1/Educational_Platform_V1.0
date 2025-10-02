@@ -30,7 +30,7 @@ string ValidId()
     {
         cout<<"Invalid form for Id\n";
         cout<<"The form must start with ""(24140)"" , Please try again\n";
-        ValidId();
+        cin >> Id;
     }
     return Id;
 }
