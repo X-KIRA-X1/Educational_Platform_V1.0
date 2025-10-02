@@ -78,7 +78,7 @@ void Doctor :: AddGrade (const string &ChosenCourse , vector <AssignmentAnswer> 
     GradesFile <<  ChosenCourse << '|'
                << CourseAssignmentsAnswers[Choice - 1].GetTitle() << '|'
                << CourseAssignmentsAnswers[Choice - 1].GetId() << '|'
-               << Grade << "\n\n";
+               << Grade << "\n";
     cout << "Grade has been added successfully!\n";
     cout << "\n1.Back to the main page\n2.Exit\n";
     int Action = InputValidation(2);
