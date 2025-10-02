@@ -179,7 +179,6 @@ void System :: SignUp()
     if (Choice == 1) cout << "Contact us to create an account \n";
     if (Choice == 2)  StudentSignup();
 }
-
 void System :: StudentSignup()
 {
     cout << "Enter your name : \n";
@@ -214,7 +213,7 @@ void System :: StudentSignup()
     StudentFile.close();
     cout << "Account created successfully! Try to login again\n";
     set <string> ChosenCoursesSet (ChosenCourses.begin() , ChosenCourses.end());
-    ifstream ICoursesFile("Courses.txt");
+    ifstream ICoursesFile("../Database/Courses.txt");
     vector <string> lines;
     string line;
     while (getline(ICoursesFile , line)) lines.push_back(line);
@@ -229,7 +228,7 @@ void System :: StudentSignup()
             lines[i].insert(Pointer , Id + '.');
         }
     }
-    ofstream OCoursesFile("Courses.txt");
+    ofstream OCoursesFile("../Database/Courses.txt");
     for (const string &Oneline : lines) OCoursesFile << Oneline << '\n';
     OCoursesFile.close();
 }
