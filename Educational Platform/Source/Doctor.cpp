@@ -75,11 +75,11 @@ void Doctor :: AddGrade (string ChosenCourse , vector <AssignmentAnswer> &Course
     int Choice = InputValidation(CourseAssignmentsAnswers.size());
     ofstream GradesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Grades.txt" , ios :: app);
     cout << "Enter the Grade : \n";
-    double Grade; cin >> Grade;
+    string Grade; cin >> Grade;
     GradesFile <<  ChosenCourse << '|'
                << CourseAssignmentsAnswers[Choice - 1].GetTitle() << '|'
                << CourseAssignmentsAnswers[Choice - 1].GetId() << '|'
-               << Grade << '\n';
+               << Grade << "\n\n";
     cout << "Grade has been added successfully!\n";
     cout << "\n1.Back to the main page\n2.Exit\n";
     int Action = InputValidation(2);
