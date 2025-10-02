@@ -1,13 +1,12 @@
 #include <iostream>
 #include <fstream>
-#include <fstream>
 #include <algorithm>
 #include <string>
 #include <sstream>
 #include "Doctor.h"
 #include "System.h"
 int InputValidation (int Range);
-bool comp (AssignmentAnswer Answer1 , AssignmentAnswer Answer2) {return Answer1 < Answer2;}
+bool comp (const AssignmentAnswer &Answer1 , const AssignmentAnswer &Answer2) {return Answer1 < Answer2;}
 void Doctor :: DoctorPortal(vector <AssignmentAnswer> &AssignmentsAnswers)
 {
     int CourseNum = 1;
@@ -23,7 +22,7 @@ void Doctor :: DoctorPortal(vector <AssignmentAnswer> &AssignmentsAnswers)
     if (Action == 4) ShowGrades(ChosenCourse , AssignmentsAnswers);
 
 }
-void Doctor :: AddAssignment(string ChosenCourse , vector <AssignmentAnswer> &AssignmentsAnswers)
+void Doctor :: AddAssignment(const string &ChosenCourse , vector <AssignmentAnswer> &AssignmentsAnswers)
 {
     ifstream ICoursesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Courses.txt");
     vector <string> lines;
@@ -43,21 +42,21 @@ void Doctor :: AddAssignment(string ChosenCourse , vector <AssignmentAnswer> &As
         }
     }
     ofstream OCoursesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Courses.txt");
-    for (string line : lines) OCoursesFile << line << "\n";
+    for (const string &OneLine : lines) OCoursesFile << OneLine << "\n";
     cout << "Assignment has been added successfully!";
     cout << "1.Back to the last page\n2.Exit\n";
     int Action = InputValidation(2);
     if (Action == 1) DoctorPortal(AssignmentsAnswers);
     if (Action == 2) return;
 }
-void Doctor :: ShowAssignmentsAnswers(string ChosenCourse , vector <AssignmentAnswer> &AssignmentsAnswers)
+void Doctor :: ShowAssignmentsAnswers(const string &ChosenCourse , vector <AssignmentAnswer> &AssignmentsAnswers)
 {
     vector <AssignmentAnswer> CourseAssignmentsAnswers;
     for (auto Answer : AssignmentsAnswers)
     {
         if (Answer.GetCourse() == ChosenCourse) CourseAssignmentsAnswers.push_back(Answer);
     }
-    sort (CourseAssignmentsAnswers.begin() , CourseAssignmentsAnswers.end() , comp);
+    ranges :: sort (CourseAssignmentsAnswers , comp);
     int AnswerNum = 1;
     for (auto Answer : CourseAssignmentsAnswers)
     {
@@ -69,7 +68,7 @@ void Doctor :: ShowAssignmentsAnswers(string ChosenCourse , vector <AssignmentAn
     if (Action == 2) DoctorPortal(AssignmentsAnswers);
     if (Action == 3) return;
 }
-void Doctor :: AddGrade (string ChosenCourse , vector <AssignmentAnswer> &CourseAssignmentsAnswers , vector <AssignmentAnswer> &AssignmentsAnswers)
+void Doctor :: AddGrade (const string &ChosenCourse , vector <AssignmentAnswer> &CourseAssignmentsAnswers , vector <AssignmentAnswer> &AssignmentsAnswers)
 {
     cout << "Enter the answer number : \n";
     int Choice = InputValidation(CourseAssignmentsAnswers.size());
@@ -86,7 +85,7 @@ void Doctor :: AddGrade (string ChosenCourse , vector <AssignmentAnswer> &Course
     if (Action == 1) DoctorPortal(AssignmentsAnswers);
     if (Action == 2) return;
 }
-void Doctor :: AddLectureLink(string ChosenCourse , vector <AssignmentAnswer> &AssignmentsAnswers)
+void Doctor :: AddLectureLink(const string &ChosenCourse ,vector <AssignmentAnswer> &AssignmentsAnswers)
 {
     ifstream ILecturesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Lectures.txt");
     vector <string> lines;
@@ -106,7 +105,7 @@ void Doctor :: AddLectureLink(string ChosenCourse , vector <AssignmentAnswer> &A
         }
     }
     ofstream OLecturesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Lectures.txt");
-    for (string line : lines) OLecturesFile << line << "\n";
+    for (const string &OneLine : lines) OLecturesFile << OneLine << "\n";
     cout << "Link has been added successfully!\n";
     cout << "1.Back to the last page\n2.Exit\n";
     int Action = InputValidation(2);
@@ -114,7 +113,7 @@ void Doctor :: AddLectureLink(string ChosenCourse , vector <AssignmentAnswer> &A
     if (Action == 2) return;
     //bug deleting all the lines in the file until exiting?
 }
-void Doctor :: ShowGrades (string ChosenCourse , vector <AssignmentAnswer> &AssignmentsAnswers)
+void Doctor :: ShowGrades (const string &ChosenCourse , vector <AssignmentAnswer> &AssignmentsAnswers)
 {
     ifstream GradesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Grades.txt");
     map <string , vector <pair<string,string>>> AssignmentGrades;
