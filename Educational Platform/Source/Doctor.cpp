@@ -22,9 +22,9 @@ void Doctor :: DoctorPortal(vector <AssignmentAnswer> &AssignmentsAnswers)
     if (Action == 4) ShowGrades(ChosenCourse , AssignmentsAnswers);
 
 }
-void Doctor :: AddAssignment(const string &ChosenCourse , vector <AssignmentAnswer> &AssignmentsAnswers)
+void Doctor :: AddAssignment(const string &ChosenCourse ,  vector <AssignmentAnswer> &AssignmentsAnswers)
 {
-    ifstream ICoursesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Courses.txt");
+    ifstream ICoursesFile("../Database/Courses.txt");
     vector <string> lines;
     string line;
     while (getline (ICoursesFile , line)) lines.push_back(line);
@@ -41,7 +41,7 @@ void Doctor :: AddAssignment(const string &ChosenCourse , vector <AssignmentAnsw
             break;
         }
     }
-    ofstream OCoursesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Courses.txt");
+    ofstream OCoursesFile("../Database/Courses.txt");
     for (const string &OneLine : lines) OCoursesFile << OneLine << "\n";
     cout << "Assignment has been added successfully!";
     cout << "1.Back to the last page\n2.Exit\n";
@@ -72,7 +72,7 @@ void Doctor :: AddGrade (const string &ChosenCourse , vector <AssignmentAnswer> 
 {
     cout << "Enter the answer number : \n";
     int Choice = InputValidation(CourseAssignmentsAnswers.size());
-    ofstream GradesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Grades.txt" , ios :: app);
+    ofstream GradesFile("../Database/Grades.txt" , ios :: app);
     cout << "Enter the Grade : \n";
     string Grade; cin >> Grade;
     GradesFile <<  ChosenCourse << '|'
@@ -87,7 +87,7 @@ void Doctor :: AddGrade (const string &ChosenCourse , vector <AssignmentAnswer> 
 }
 void Doctor :: AddLectureLink(const string &ChosenCourse ,vector <AssignmentAnswer> &AssignmentsAnswers)
 {
-    ifstream ILecturesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Lectures.txt");
+    ifstream ILecturesFile("../Database/Lectures.txt");
     vector <string> lines;
     string line;
     while (getline (ILecturesFile , line)) lines.push_back(line);
@@ -104,7 +104,7 @@ void Doctor :: AddLectureLink(const string &ChosenCourse ,vector <AssignmentAnsw
             break;
         }
     }
-    ofstream OLecturesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Lectures.txt");
+    ofstream OLecturesFile("../Database/Lectures.txt");
     for (const string &OneLine : lines) OLecturesFile << OneLine << "\n";
     cout << "Link has been added successfully!\n";
     cout << "1.Back to the last page\n2.Exit\n";
@@ -115,7 +115,7 @@ void Doctor :: AddLectureLink(const string &ChosenCourse ,vector <AssignmentAnsw
 }
 void Doctor :: ShowGrades (const string &ChosenCourse , vector <AssignmentAnswer> &AssignmentsAnswers)
 {
-    ifstream GradesFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\Grades.txt");
+    ifstream GradesFile("../Database/Grades.txt");
     map <string , vector <pair<string,string>>> AssignmentGrades;
     vector <string> lines;
     string line;
