@@ -23,10 +23,10 @@ public :
     {
         cout << Title << " " << Course << " "  << StudentId << " "  << Answer << " "  << "\n";
     }
-    string GetCourse() {return Course;}
-    string GetId() {return StudentId;}
-    string GetAnswer() {return Answer;}
-    string GetTitle () {return Title;}
+    const string &GetCourse() {return Course;}
+    const string &GetId() {return StudentId;}
+    const string &GetAnswer() {return Answer;}
+    const string &GetTitle () {return Title;}
     bool operator < (AssignmentAnswer Answer1) {return this -> Title < Answer1.Title;}
 };
 #endif //EDUCATIONAL_PLATFORM_ASSIGNMENTS_H
