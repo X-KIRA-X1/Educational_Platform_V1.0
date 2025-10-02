@@ -107,7 +107,7 @@ void Student :: SubmitAssignment (const string &ChosenCourse , const string &Cho
     cout << "Enter The Answer : \n";
     cin.ignore();
     getline (cin , Answer);
-    ofstream AssignmentsFile("D:\\Projects\\Projects_Gits\\Educational Platform\\Database\\AssignmentsAnswers.txt",ios::app);
+    ofstream AssignmentsFile("../Database/AssignmentsAnswers.txt",ios::app);
     AssignmentsFile << ChosenAssignment << '|' << ChosenCourse << '|' << GetId() << '|'<< Answer << '\n';
     AssignmentsFile.close();
     cout << "Submitted Successfully! Exit to confirm submission \n";
