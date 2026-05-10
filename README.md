@@ -26,9 +26,6 @@ the credentials validation process speed
 ##  Requirements
 - **C++ compiler** with C++17 (or later) support  
 - **CMake** 3.10+  
-- Any additional libraries you use (add them here if needed)  
-- Runs on Windows / Linux / macOS
-
 ---
 
 ##  Build & Run
